@@ -1,0 +1,19 @@
+{
+  "name": "remix-devtools",
+  "version": "0.0.1",
+  "description": "Devtools for remix-run framework.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuptaSiddhant/remix-devtools.git"
+  },
+  "keywords": [],
+  "author": "Siddhant Gupta <me@guptasiddhant.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GuptaSiddhant/remix-devtools/issues"
+  },
+  "homepage": "https://github.com/GuptaSiddhant/remix-devtools#readme"
+}
