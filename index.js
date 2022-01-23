@@ -1,8 +1,11 @@
-function info() {
-  return {
-    name: "remix-devtools",
-    version: "0.0.1",
-  };
-}
+"use strict";
 
-module.exports = info;
+if (process.env.NODE_ENV === "production") {
+  module.exports = {
+    RemixDevtools: function () {
+      return null;
+    },
+  };
+} else {
+  module.exports = require("./dist");
+}
