@@ -1,0 +1,28 @@
+name: publish
+on:
+  schedule:
+    - cron: 0 0 * * * # Daily
+  workflow_dispatch: {}
+
+env:
+  INPUT_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+jobs:
+  deps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Configure your languages and package managers
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "yarn"
+
+      - name: Setup NPM TOKEN
+        run: echo "//registry.npmjs.org/:_authToken=$INPUT_TOKEN" > ~/.npmrc
+
+      - run: yarn install --frozen-lockfile
+
+      - run: node setup.js
+      - run: node publish.js

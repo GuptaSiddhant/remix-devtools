@@ -1,6 +1,6 @@
 {
   "name": "remix-devtools",
-  "version": "3.4.0",
+  "version": "0.0.0",
   "description": "Devtools for remix-run framework.",
   "keywords": [
     "remix-run",
@@ -47,7 +47,7 @@
   "author": "Siddhant Gupta <me@guptasiddhant.com>",
   "license": "MIT",
   "dependencies": {
-    "remix-development-tools": "3.4.0"
+    "remix-development-tools": "*"
   },
   "devDependencies": {
     "@jsdevtools/npm-publish": "^3.0.1"
