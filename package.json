@@ -49,9 +49,6 @@
   "dependencies": {
     "remix-development-tools": "*"
   },
-  "devDependencies": {
-    "@jsdevtools/npm-publish": "^3.0.1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GuptaSiddhant/remix-devtools.git"

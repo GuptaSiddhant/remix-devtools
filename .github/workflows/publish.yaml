@@ -8,7 +8,7 @@ env:
   INPUT_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
 jobs:
-  deps:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,4 +19,7 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=$INPUT_TOKEN" > ~/.npmrc
 
       - run: node setup.js
+
+      - name: Install Dependencies
+        run: npm install --save-dev @jsdevtools/npm-publish
       - run: node publish.cjs
