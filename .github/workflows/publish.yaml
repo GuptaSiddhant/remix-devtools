@@ -6,8 +6,6 @@ on:
   push:
     branches:
       - main
-env:
-  NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -16,7 +14,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Setup NPM TOKEN
-        run: npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          registry-url: "https://registry.npmjs.org"
       - name: Publish to NPM
         run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
