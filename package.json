@@ -50,7 +50,7 @@
     "remix-development-tools": "3.4.0"
   },
   "devDependencies": {
-    "@jsdevtools/npm-publish": "^1.4.3"
+    "@jsdevtools/npm-publish": "^3.0.1"
   },
   "repository": {
     "type": "git",
