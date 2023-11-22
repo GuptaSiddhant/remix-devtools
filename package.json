@@ -56,5 +56,8 @@
   "bugs": {
     "url": "https://github.com/Code-Forge-Net/Remix-Dev-Tools/issues"
   },
-  "homepage": "https://github.com/Code-Forge-Net/Remix-Dev-Tools"
+  "homepage": "https://github.com/Code-Forge-Net/Remix-Dev-Tools",
+  "scripts": {
+    "prepublishOnly": "node setup.js"
+  }
 }

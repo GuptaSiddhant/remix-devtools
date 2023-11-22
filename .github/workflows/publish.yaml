@@ -3,10 +3,8 @@ on:
   schedule:
     - cron: 0 0 * * * # Daily
   workflow_dispatch: {}
-
 env:
   INPUT_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -17,9 +15,5 @@ jobs:
           node-version: 18
       - name: Setup NPM TOKEN
         run: echo "//registry.npmjs.org/:_authToken=$INPUT_TOKEN" > ~/.npmrc
-
-      - run: node setup.js
-
-      - name: Install Dependencies
-        run: npm install --save-dev @jsdevtools/npm-publish
-      - run: node publish.cjs
+      - name: Publish to NPM
+        run: npm publish --access public
