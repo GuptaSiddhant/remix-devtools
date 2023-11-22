@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Script to publish CLI to NPM.
 
-const { npmPublish } = require("@jsdevtools/npm-publish");
-const { readFileSync, writeFileSync } = require("fs");
+import { npmPublish } from "@jsdevtools/npm-publish";
+import { readFileSync, writeFileSync } from "node:fs";
 
 const token = process.argv[2];
 const manifestPath = "package.json";
