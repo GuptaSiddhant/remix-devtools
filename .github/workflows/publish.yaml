@@ -22,7 +22,7 @@ jobs:
       - name: Setup NPM TOKEN
         run: echo "//registry.npmjs.org/:_authToken=$INPUT_TOKEN" > ~/.npmrc
 
-      - run: yarn install --frozen-lockfile
-
       - run: node setup.js
+      - run: yarn install
+      - run: cp ./node_modules/remix-development-tools/dist/index.css ./dist/index.css
       - run: node publish.js
