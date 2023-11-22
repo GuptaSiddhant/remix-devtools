@@ -24,3 +24,11 @@ if (newVersion !== currentVersion) {
   pkgJson.dependencies[pkgName] = newVersion;
   writePkgJson(pkgJson);
 }
+
+await fetch(
+  `https://unpkg.com/remix-development-tools@${newVersion}/dist/index.css`
+)
+  .then((res) => res.text())
+  .then((css) =>
+    fs.writeFileSync(new URL("./dist/index.css", import.meta.url), css)
+  );

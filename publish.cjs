@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Script to publish CLI to NPM.
 
-import { npmPublish } from "@jsdevtools/npm-publish";
-import { readFileSync, writeFileSync } from "node:fs";
+const { npmPublish } = require("@jsdevtools/npm-publish");
+const { readFileSync, writeFileSync } = require("node:fs");
 
 const token = process.argv[2];
 const manifestPath = "package.json";
@@ -31,10 +31,9 @@ async function publishCanaryToNpm() {
 }
 
 /** @param {import("@jsdevtools/npm-publish").Results} results */
-function handleSuccess({ tag, version }) {
-  console.log(`Usage: npx guptasiddhant@${tag}`);
+function handleSuccess({ version }) {
   console.log(
-    `Link : https://www.npmjs.com/package/guptasiddhant/v/${version}`
+    `Link : https://www.npmjs.com/package/remix-devtools/v/${version}`
   );
 }
 

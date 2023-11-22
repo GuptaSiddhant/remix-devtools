@@ -19,6 +19,4 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=$INPUT_TOKEN" > ~/.npmrc
 
       - run: node setup.js
-      - run: yarn install
-      - run: cp ./node_modules/remix-development-tools/dist/index.css ./dist/index.css
-      - run: node publish.js
+      - run: node publish.cjs
